@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> DEWTechSupport IT - Repair & Accessories</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark">TS</div>
+        <div>
+          <div class="brand-name">TechSupport IT</div>
+          <div class="brand-tag">Repair • Upgrades • Accessories</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link" href="#repair">Book Repair</a>
+        <a class="nav-link" href="#shop">Shop Accessories</a>
+        <a class="nav-link" href="#cart" id="navCartLink">Cart</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost" id="btnAccount" type="button">Login / Sign up</button>
+        <button class="btn btn-ghost" id="btnLogout" type="button" hidden>Logout</button>
+        <div class="cart-badge" title="Items in cart">
+          <span id="cartCount">0</span>
+          <span class="cart-icon">🛒</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Fast computer repair & trusted accessories.</h1>
+          <p>Book a technician visit, describe your issue, and get ready-to-buy parts—all in one place.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#repair">Get Repair Support</a>
+            <a class="btn btn-secondary" href="#shop">Buy Accessories</a>
+          </div>
+          <div class="trust">
+            <div class="trust-item">✅ Quick response</div>
+            <div class="trust-item">🧰 Technician support</div>
+            <div class="trust-item">🔒 Secure account & orders</div>
+          </div>
+        </div>
+
+        <div class="panel" id="repair">
+          <h2 class="section-title" style="margin-top:0;">Book a repair</h2>
+          <p class="muted" style="margin-top:-6px;">Describe your computer issue. We'll schedule a technician for you.</p>
+
+          <form id="repairForm" autocomplete="off">
+            <div class="grid-2" style="margin-top:12px;">
+              <div class="field">
+                <label for="rName">Full name</label>
+                <input id="rName" name="name" required placeholder="e.g., John Doe" />
+              </div>
+              <div class="field">
+                <label for="rContact">Contact (phone/email)</label>
+                <input id="rContact" name="contact" required placeholder="e.g., +234..." />
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="rDevice">Device</label>
+                <select id="rDevice" name="device" required>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Desktop">Desktop</option>
+                  <option value="Printer">Printer</option>
+                  <option value="Tablet">Tablet</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rBrand">Brand</label>
+                <input id="rBrand" name="brand" placeholder="e.g., HP, Lenovo, Dell" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="rIssue">Issue description</label>
+              <textarea id="rIssue" name="issue" required placeholder="What’s happening? Any error messages?" ></textarea>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="rService">Service type</label>
+                <select id="rService" name="service" required>
+                  <option value="Software / Virus removal">Software / Virus removal</option>
+                  <option value="Slow performance upgrade">Slow performance upgrade</option>
+                  <option value="Hardware diagnosis">Hardware diagnosis</option>
+                  <option value="Screen / keyboard repair">Screen / keyboard repair</option>
+                  <option value="Data recovery">Data recovery</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rTime">Preferred time</label>
+                <input id="rTime" name="time" type="datetime-local" required />
+              </div>
+            </div>
+
+            <div class="row" style="justify-content:space-between; margin-top:14px;">
+              <div class="notice" id="repairNotice" style="display:none;"></div>
+              <button class="btn btn-primary" type="submit">Request technician</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <h2 class="section-title">Accessories shop</h2>
+        <p class="muted" style="margin-top:-6px;">Add items to your cart. Checkout uses your session (stored locally).</p>
+
+        <div class="grid-3" style="margin-top:16px;">
+          <div class="product-card">
+            <div class="product-name">USB Wi‑Fi Adapter</div>
+            <div class="product-meta">AC1200 • Stable connection • Plug & play</div>
+            <div class="price">Ghȼ100</div>
+            <button class="btn" type="button" data-sku="wifi-usb" data-price="100">Add to cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-name">16GB RAM (DDR4)</div>
+            <div class="product-meta">Upgrade speed • For compatible laptops/desktops</div>
+            <div class="price">Ghȼ454.25</div>
+            <button class="btn" type="button" data-sku="ram-16gb" data-price="454.25">Add to cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-name">1TB SSD</div>
+            <div class="product-meta">Fast boot • Better performance • Reliable</div>
+            <div class="price">Ghȼ855.91</div>
+            <button class="btn" type="button" data-sku="ssd-1tb" data-price="855.91">Add to cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-name">Computer Cleaning Kit</div>
+            <div class="product-meta">Brush + compressed air + microfiber cloth</div>
+            <div class="price">Ghȼ138.00</div>
+            <button class="btn" type="button" data-sku="clean-kit" data-price="138.00">Add to cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-name">Laptop Cooling Pad</div>
+            <div class="product-meta">Reduce heat • Adjustable fan speeds</div>
+            <div class="price">Ghȼ350.55</div>
+            <button class="btn" type="button" data-sku="cooling-pad" data-price="24.99">Add to cart</button>
+          </div>
+          <div class="product-card">
+            <div class="product-name">HDMI Cable (2m)</div>
+            <div class="product-meta">Supports 4K • Durable connectors</div>
+            <div class="price">Ghȼ35.00</div>
+            <button class="btn" type="button" data-sku="hdmi-2m" data-price="9.99">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cart">
+      <div class="container">
+        <h2 class="section-title">Your cart</h2>
+
+        <div class="panel" style="padding:14px;">
+          <div class="row" style="justify-content:space-between; gap:10px;">
+            <div class="muted" id="cartSummary">Loading…</div>
+            <button class="btn" type="button" id="btnClearCart" disabled>Clear cart</button>
+          </div>
+
+          <div style="overflow:auto; margin-top:12px;">
+            <table class="cart-table" aria-label="Cart table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cartBody"></tbody>
+            </table>
+          </div>
+
+          <div class="row" style="justify-content:flex-end; margin-top:14px;">
+            <div style="min-width:260px;">
+              <div class="row" style="justify-content:space-between; margin-bottom:10px;">
+                <div class="muted">Subtotal</div>
+                <div id="cartSubtotal" style="font-weight:900;">$0.00</div>
+              </div>
+              <button class="btn btn-primary" type="button" id="btnCheckout" disabled>Checkout</button>
+            </div>
+          </div>
+
+          <div class="notice" id="checkoutNotice" style="display:none; margin-top:12px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="font-weight:900; color:var(--text);">TechSupport IT</div>
+        <div>Repair • Upgrades • Accessories — local demo app (frontend only)</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Account modal -->
+  <div class="modal-overlay" id="accountOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="accountTitle">Account</div>
+        <button class="close-x" type="button" id="btnCloseAccount" aria-label="Close">×</button>
+      </div>
+
+      <div class="row" style="gap:8px; margin-bottom:12px;">
+        <button class="btn" type="button" id="tabLogin">Login</button>
+        <button class="btn" type="button" id="tabSignup">Sign up</button>
+      </div>
+
+      <div class="panel" style="box-shadow:none; background:rgba(255,255,255,.02)" id="loginPanel">
+        <form id="loginForm">
+          <div class="field">
+            <label for="lEmail">Email</label>
+            <input id="lEmail" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="lPassword">Password</label>
+            <input id="lPassword" name="password" type="password" required minlength="4" placeholder="Your password" />
+          </div>
+          <div class="notice" id="loginNotice" style="display:none;"></div>
+          <div class="row" style="justify-content:flex-end; margin-top:12px;">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel hidden" style="box-shadow:none; background:rgba(255,255,255,.02)" id="signupPanel">
+        <form id="signupForm">
+          <div class="grid-2">
+            <div class="field">
+              <label for="sName">Full name</label>
+              <input id="sName" name="name" required placeholder="e.g., John Doe" />
+            </div>
+            <div class="field">
+              <label for="sPhone">Phone</label>
+              <input id="sPhone" name="phone" placeholder="e.g., +234..." />
+            </div>
+          </div>
+          <div class="field">
+            <label for="sEmail">Email</label>
+            <input id="sEmail" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="sPassword">Password</label>
+            <input id="sPassword" name="password" type="password" required minlength="4" placeholder="Choose a password" />
+          </div>
+          <div class="notice" id="signupNotice" style="display:none;"></div>
+          <div class="row" style="justify-content:flex-end; margin-top:12px;">
+            <button class="btn btn-primary" type="submit">Create account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // --- Simple frontend-only auth & cart (localStorage) ---
+    const LS_USERS = 'ts_users_v1';
+    const LS_SESSION = 'ts_session_v1';
+    const LS_CART = 'ts_cart_v1';
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    function loadUsers(){
+      try{ return JSON.parse(localStorage.getItem(LS_USERS)) || {}; }catch{ return {}; }
+    }
+    function saveUsers(u){ localStorage.setItem(LS_USERS, JSON.stringify(u)); }
+
+    function getSession(){
+      try{ return JSON.parse(localStorage.getItem(LS_SESSION)); }catch{ return null; }
+    }
+    function setSession(s){ localStorage.setItem(LS_SESSION, JSON.stringify(s)); }
+    function clearSession(){ localStorage.removeItem(LS_SESSION); }
+
+    function loadCart(){
+      try{ return JSON.parse(localStorage.getItem(LS_CART)) || []; }catch{ return []; }
+    }
+    function saveCart(cart){ localStorage.setItem(LS_CART, JSON.stringify(cart)); }
+
+    function formatMoney(n){
+      const x = Number(n || 0);
+      return x.toLocaleString(undefined, {style:'currency', currency:'USD'});
+    }
+
+    function setNotice(el, text, kind){
+      el.style.display = 'block';
+      el.classList.remove('success','danger');
+      if(kind) el.classList.add(kind);
+      el.textContent = text;
+    }
+
+    function openAccount(){
+      $('#accountOverlay').style.display = 'flex';
+      $('#accountOverlay').setAttribute('aria-hidden','false');
+    }
+    function closeAccount(){
+      $('#accountOverlay').style.display = 'none';
+      $('#accountOverlay').setAttribute('aria-hidden','true');
+    }
+
+    function syncHeader(){
+      const session = getSession();
+      const btnAccount = $('#btnAccount');
+      const btnLogout = $('#btnLogout');
+
+      if(session && session.user){
+        btnAccount.hidden = true;
+        btnLogout.hidden = false;
+        // Replace cart link visibility is not needed; just update checkout enabled state
+      } else {
+        btnAccount.hidden = false;
+        btnLogout.hidden = true;
+      }
+    }
+
+    // Tabs
+    function activateTab(which){
+      const loginPanel = $('#loginPanel');
+      const signupPanel = $('#signupPanel');
+      const tabLogin = $('#tabLogin');
+      const tabSignup = $('#tabSignup');
+      const btns = [tabLogin, tabSignup];
+      btns.forEach(b => b.style.borderColor = 'rgba(255,255,255,.14)');
+
+      if(which === 'login'){
+        loginPanel.classList.remove('hidden');
+        signupPanel.classList.add('hidden');
+        tabLogin.style.borderColor = 'rgba(43,212,200,.55)';
+      } else {
+        signupPanel.classList.remove('hidden');
+        loginPanel.classList.add('hidden');
+        tabSignup.style.borderColor = 'rgba(43,212,200,.55)';
+      }
+    }
+
+    $('#btnAccount').addEventListener('click', ()=>{ activateTab('login'); openAccount(); });
+    $('#btnLogout').addEventListener('click', ()=>{ clearSession(); syncHeader(); $('#checkoutNotice').style.display='none'; updateCartUI(); });
+    $('#btnCloseAccount').addEventListener('click', closeAccount);
+    $('#accountOverlay').addEventListener('click', (e)=>{ if(e.target.id === 'accountOverlay') closeAccount(); });
+
+    $('#tabLogin').addEventListener('click', ()=>activateTab('login'));
+    $('#tabSignup').addEventListener('click', ()=>activateTab('signup'));
+
+    $('#loginForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = $('#lEmail').value.trim().toLowerCase();
+      const password = $('#lPassword').value;
+
+      const users = loadUsers();
+      const user = users[email];
+      if(!user){ return setNotice($('#loginNotice'), 'No account found for this email.', 'danger'); }
+      if(user.password !== password){ return setNotice($('#loginNotice'), 'Incorrect password.', 'danger'); }
+
+      setSession({ user: { name: user.name, email }, at: Date.now() });
+      $('#loginNotice').style.display='none';
+      closeAccount();
+      syncHeader();
+      updateCartUI();
+    });
+
+    $('#signupForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = $('#sName').value.trim();
+      const phone = $('#sPhone').value.trim();
+      const email = $('#sEmail').value.trim().toLowerCase();
+      const password = $('#sPassword').value;
+
+      if(!name || name.length < 2) return setNotice($('#signupNotice'), 'Please enter your full name.', 'danger');
+      if(password.length < 4) return setNotice($('#signupNotice'), 'Password must be at least 4 characters.', 'danger');
+
+      const users = loadUsers();
+      if(users[email]) return setNotice($('#signupNotice'), 'An account already exists with this email.', 'danger');
+
+      users[email] = { name, phone, email, password };
+      saveUsers(users);
+      setSession({ user: { name, email }, at: Date.now() });
+      $('#signupNotice').style.display='none';
+      closeAccount();
+      syncHeader();
+      updateCartUI();
+    });
+
+    // Repair form (no backend; just confirmation)
+    $('#repairForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const session = getSession();
+      const notice = $('#repairNotice');
+      const name = $('#rName').value.trim();
+      const device = $('#rDevice').value;
+      const issue = $('#rIssue').value.trim();
+
+      if(!session){
+        setNotice(notice, 'Please login or sign up to submit repair request.', 'danger');
+        $('#btnAccount').click();
+        return;
+      }
+
+      setNotice(notice, `Request received! ${device} repair booked for ${$('#rTime').value}. We will contact ${$('#rContact').value} soon.`, 'success');
+      e.target.reset();
+    });
+
+    // Cart
+    const products = {
+      'wifi-usb': 'USB Wi‑Fi Adapter',
+      'ram-16gb': '16GB RAM (DDR4)',
+      'ssd-1tb': '1TB SSD',
+      'clean-kit': 'Computer Cleaning Kit',
+      'cooling-pad': 'Laptop Cooling Pad',
+      'hdmi-2m': 'HDMI Cable (2m)'
+    };
+
+    function cartCount(cart){
+      return cart.reduce((sum, it)=>sum + it.qty, 0);
+    }
+
+    function updateCartUI(){
+      const cart = loadCart();
+      const count = cartCount(cart);
+      $('#cartCount').textContent = count;
+
+      const cartBody = $('#cartBody');
+      cartBody.innerHTML = '';
+
+      const subtotal = cart.reduce((sum, it)=> sum + (it.price * it.qty), 0);
+      $('#cartSubtotal').textContent = formatMoney(subtotal);
+
+      const hasItems = cart.length > 0;
+      $('#btnCheckout').disabled = !hasItems;
+      $('#btnClearCart').disabled = !hasItems;
+
+      const session = getSession();
+      if(!session){
+        $('#btnCheckout').disabled = true;
+      }
+
+      $('#cartSummary').textContent = hasItems ? `${count} item(s) in cart` : 'Your cart is empty.';
+
+      if(!hasItems) return;
+
+      cart.forEach((it, idx)=>{
+        const tr = document.createElement('tr');
+        const itemName = products[it.sku] || it.sku;
+
+        tr.innerHTML = `
+          <td>${itemName}</td>
+          <td>
+            <div class="qty-controls">
+              <button class="mini-btn" type="button" data-dec="${it.sku}" ${it.qty<=1?'disabled':''}>−</button>
+              <span style="min-width:28px; text-align:center; font-weight:900;">${it.qty}</span>
+              <button class="mini-btn" type="button" data-inc="${it.sku}">+</button>
+            </div>
+          </td>
+          <td>${formatMoney(it.price)}</td>
+          <td>${formatMoney(it.price * it.qty)}</td>
+          <td><button class="btn btn-ghost" type="button" data-rem="${it.sku}" aria-label="Remove" style="border-color:transparent; padding:8px 10px;">✕</button></td>
+        `;
+        cartBody.appendChild(tr);
+      });
+    }
+
+    function addToCart(sku, price){
+      const cart = loadCart();
+      const found = cart.find(x=>x.sku===sku);
+      if(found){ found.qty += 1; }
+      else cart.push({ sku, price, qty: 1 });
+      saveCart(cart);
+      updateCartUI();
+    }
+
+    function changeQty(sku, delta){
+      const cart = loadCart();
+      const it = cart.find(x=>x.sku===sku);
+      if(!it) return;
+      it.qty = Math.max(0, it.qty + delta);
+      const next = cart.filter(x=>x.qty>0);
+      saveCart(next);
+      updateCartUI();
+    }
+
+    function removeItem(sku){
+      const cart = loadCart().filter(x=>x.sku!==sku);
+      saveCart(cart);
+      updateCartUI();
+    }
+
+    $$('#shop [data-sku]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        addToCart(btn.dataset.sku, Number(btn.dataset.price));
+      });
+    });
+
+    $('#cartBody').addEventListener('click', (e)=>{
+      const t = e.target;
+      if(t && t.dataset){
+        if(t.dataset.inc) changeQty(t.dataset.inc, +1);
+        if(t.dataset.dec) changeQty(t.dataset.dec, -1);
+        if(t.dataset.rem) removeItem(t.dataset.rem);
+      }
+    });
+
+    $('#btnClearCart').addEventListener('click', ()=>{
+      saveCart([]);
+      updateCartUI();
+    });
+
+    $('#btnCheckout').addEventListener('click', ()=>{
+      const session = getSession();
+      const notice = $('#checkoutNotice');
+      if(!session){
+        notice.style.display='block';
+        setNotice(notice, 'Please login to checkout.', 'danger');
+        $('#btnAccount').click();
+        return;
+      }
+
+      const cart = loadCart();
+      if(cart.length === 0) return;
+
+      const subtotal = cart.reduce((sum, it)=> sum + (it.price * it.qty), 0);
+      setNotice(notice, `Checkout successful! Order for ${session.user.name} placed (${formatMoney(subtotal)}).`, 'success');
+      saveCart([]);
+      updateCartUI();
+    });
+
+    // init
+    syncHeader();
+    updateCartUI();
+  </script>
+</body>
+</html>
+
